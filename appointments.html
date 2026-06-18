@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointments | Rayeth Studio</title>
+  <link rel="stylesheet" href="appointments.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Rayeth Studio home">
+      <img src="assets/logo/rayeth-mark.svg" alt="" class="brand-mark">
+      <span>RAYETH</span>
+    </a>
+    <nav class="header-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="appointments.html">Appointments</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <main class="booking-page">
+    <section class="booking-intro" aria-labelledby="booking-title">
+      <p class="eyebrow">Reserve your chair</p>
+      <h1 id="booking-title">Appointments</h1>
+      <p>Choose a service, select your preferred date and time, and confirm your visit with Rayeth Studio.</p>
+    </section>
+
+    <section class="booking-card" aria-label="Booking form">
+      <form id="booking-form">
+        <div class="form-grid">
+          <label>
+            <span>Service</span>
+            <select name="service" required>
+              <option value="">Select a service</option>
+              <option>Haircut</option>
+              <option>Hair Colour</option>
+              <option>Spa</option>
+              <option>Tattoo</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Date</span>
+            <input type="date" name="date" required>
+          </label>
+        </div>
+
+        <fieldset class="time-slot-field">
+          <legend>Available Time</legend>
+          <div class="time-slots" id="time-slots"></div>
+          <input type="hidden" name="time" id="selected-time" required>
+        </fieldset>
+
+        <div class="form-grid">
+          <label>
+            <span>Full Name</span>
+            <input type="text" name="name" autocomplete="name" placeholder="Your full name" required>
+          </label>
+
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" autocomplete="email" placeholder="you@example.com" required>
+          </label>
+
+          <label>
+            <span>Phone Number</span>
+            <input type="tel" name="phone" autocomplete="tel" placeholder="+91 98765 43210" pattern="^(\\+91[\\s-]?|91[\\s-]?|0)?[6-9][0-9]{9}$" title="Enter a valid Indian phone number, for example +91 9876543210" required>
+          </label>
+        </div>
+
+        <button class="confirm-button" type="submit">Confirm Booking</button>
+        <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="appointments.js"></script>
+</body>
+</html>
